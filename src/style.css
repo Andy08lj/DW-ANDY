@@ -37,7 +37,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 60px;
+    height: 70px;
     background-color: transparent;
 }
 
@@ -54,6 +54,8 @@
     border-radius: 4px;
     transition: background 0.2s;
     font-size: 20px;
+    margin-left: 10px; /* Añade un margen izquierdo para separar los enlaces */
+    margin-right: 10px; /* Añade un margen derecho para separar los enlaces */
 }
 
 .ST-MENU li a:hover, .active {
