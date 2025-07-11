@@ -1,0 +1,59 @@
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TO DO LIST</title>
+    <link rel="stylesheet" href="src/index.css">
+</head>
+<body>
+
+    <div class="td-menu">
+        <button class="td-menu-create" id="td-menu-create">
+            + CREATE
+        </button>
+
+        <div>
+            <li>
+                + CREATE NEW LIST
+            </li>
+        </div>   
+
+        <div class="td-tasks-list">
+
+            <ul id="taskList">TASK LIST</ul>
+        
+        </div>
+            <div class="tasks-modes">
+        <ul id="taskListInPending">PENDING</ul>
+        <ul id="taskListCompleted">COMPLETED</ul>
+        <ul id="taskListDeleted">DELETED</ul>
+    </div>
+    </div>
+
+    <main class="td-header">
+        <h1>Welcome</h1>
+        <h2>TO DO LIST DINAMIC</h2>
+        
+    </main>
+
+    <form class="td-task-form">
+        <input type="text" id="taskInput" placeholder="Nueva tarea..." required>
+        <button type="submit">Añadir</button>
+    </form>
+
+    <div class="td-tasks">
+        
+        <h3 class="td-h3-task">MY TASKS</h3>
+
+    </div>  
+
+
+
+
+   
+
+
+
+    <script src="src/indexScript.js"></script>
+</body>
+</html>
