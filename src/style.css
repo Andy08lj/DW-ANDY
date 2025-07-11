@@ -1,20 +1,19 @@
 .ST-BODY {
     font-family: Arial, sans-serif;
-    background-color: #f0f0f0; 
+    background-color: #f0f0f0;
     color: #000;
     margin: 0;
 }
 
-/* ...existing code... */
 .ST-NAV {
     background-color: #222;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
     position: fixed;
     top: 0;
     width: 100%;
     z-index: 100;
     display: flex;
-    align-items: center; /* Asegura que todo dentro de .ST-NAV esté centrado verticalmente */
+    align-items: center;
     justify-content: space-between;
 }
 
@@ -23,11 +22,9 @@
     font-weight: bold;
     color: #fff;
     margin-left: 40px;
-    margin-top: 0; /* Asegúrate de que no haya margen superior */
-    margin-bottom: 0; /* Asegúrate de que no haya margen inferior */
     letter-spacing: 2px;
     display: flex;
-    align-items: center; /* Centra el contenido interno del logo si es necesario */
+    align-items: center;
 }
 
 .ST-MENU {
@@ -52,10 +49,9 @@
     padding: 20px 18px;
     text-decoration: none;
     border-radius: 4px;
-    transition: background 0.2s;
+    transition: background 0.2s ease, color 0.2s ease;
     font-size: 20px;
-    margin-left: 10px; /* Añade un margen izquierdo para separar los enlaces */
-    margin-right: 10px; /* Añade un margen derecho para separar los enlaces */
+    margin: 0 10px;
 }
 
 .ST-MENU li a:hover, .active {
@@ -63,28 +59,156 @@
     color: #fff;
 }
 
-/* ...existing code... */
+.ST-MENU li a:focus {
+    outline: 2px solid #ff9900; /* Agrega un borde visible al enfocar */
+    outline-offset: 4px;
+}
+
 .ST-WELCOME {
     text-align: center;
     padding: 50px 20px;
     position: relative;
-    width: 800px; /* Ajusta el ancho según tus necesidades */
-    height: 600px; /* Ajusta la altura según tus necesidades */
-    overflow: hidden
+    width: 100%;
+    height: 600px;
+    overflow: hidden;
+    background-image: url('/src/Nike Air Zoom Pegasus_.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
+
+.ST-WELCOME::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+
+.ST-WELCOME-TEXT {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7);
+    z-index: 2;
+    line-height: 1.8;
+    text-align: center;
+}
+
 .ST-WELCOME-TITLE-H1 {
-    font-size: 36px;
-    color: #333;
+    font-size: 40px; /* Aumenta el tamaño para mayor legibilidad */
+    color: #fff;
 }
+
 .ST-WELCOME-LEGEND-MISSION {
-    font-size: 16px;
-    color: #828186;
+    font-size: 18px; /* Aumenta el tamaño */
+    color: #ffffff;
 }
+
 .ST-WELCOME-BT-SHOP-NOW {
     background-color: #ff9900;
-    color: rgb(255, 255, 255);
+    color: #000; /* Cambia el texto a negro para mayor contraste */
     padding: 10px 20px;
-    border: 2px solid #000000;
-    border-radius: 10px;
+    border: 2px solid transparent;
+    border-radius: 5px;
     cursor: pointer;
+    transition: transform 0.2s ease, background-color 0.2s ease;
+    width: 200px;
+    height: 50px;
+    font-size: 20px;
+    margin-top: 20px;
+    font-weight: bold;
+    text-shadow: 1px 1px 2px white;
+}
+
+.ST-WELCOME-BT-SHOP-NOW:hover {
+    background-color: #e08600;
+    color: #000;
+    border-color: #fff;
+    transform: scale(1.2);
+}
+
+/* Oculta el botón por defecto en pantallas grandes */
+.ST-MENU-TOGGLE {
+    display: none;
+}
+
+/* Muestra el botón solo en pantallas pequeñas */
+@media (max-width: 768px) {
+    .ST-MENU-TOGGLE {
+        display: block;
+        background: none;
+        border: none;
+        color: #fff;
+        font-size: 24px;
+        cursor: pointer;
+    }
+}
+
+@media (max-width: 768px) {
+    .ST-MENU {
+        display: none; /* Oculta el menú por defecto */
+        flex-direction: column; /* Cambia a diseño vertical */
+        position: fixed; /* Cambia a `fixed` para que cubra toda la pantalla */
+        top: 0; /* Asegúrate de que comience desde la parte superior */
+        left: 0; /* Asegúrate de que cubra desde el borde izquierdo */
+        width: 100%; /* Cubre todo el ancho de la pantalla */
+        height: 100%; /* Cubre toda la altura de la pantalla */
+        background-color: rgba(0, 0, 0, 0.95); /* Fondo negro con opacidad */
+        padding: 20px 0; /* Espaciado interno */
+        z-index: 100; /* Asegúrate de que esté encima de otros elementos */
+    }
+
+    .ST-MENU li {
+        margin: 20px 0; /* Espaciado entre los elementos del menú */
+        text-align: center; /* Centra el texto */
+    }
+
+    .ST-MENU li a {
+        color: #fff; /* Asegura que el texto sea blanco */
+        font-size: 20px; /* Ajusta el tamaño del texto */
+        padding: 15px 0; /* Aumenta el área clicable */
+        text-decoration: none; /* Elimina el subrayado */
+        display: block; /* Asegura que ocupe todo el ancho */
+        transition: background 0.2s ease, color 0.2s ease;
+    }
+
+    .ST-MENU li a:hover {
+        background-color: #ff9900; /* Cambia el fondo al pasar el mouse */
+        color: #000; /* Cambia el texto a negro */
+    }
+
+    .ST-MENU.show {
+        display: flex; /* Muestra el menú cuando se activa */
+    }
+
+    /* Oculta el botón de cierre por defecto */
+    .ST-MENU-CLOSE {
+        display: none;
+    }
+
+    /* Muestra el botón de cierre solo en pantallas pequeñas */
+    @media (max-width: 768px) {
+        .ST-MENU-CLOSE {
+            display: block;
+            position: absolute;
+            top: 10px;
+            right: 20px;
+            background: none;
+            border: none;
+            color: #fff;
+            font-size: 24px;
+            cursor: pointer;
+            z-index: 101; /* Asegúrate de que esté encima del menú */
+        }
+
+        .ST-MENU-CLOSE:hover {
+            color: #ff9900; /* Cambia el color al pasar el mouse */
+        }
+    }
 }
