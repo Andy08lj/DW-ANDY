@@ -13,47 +13,54 @@
     top: 0;
     width: 100%;
     z-index: 100;
-}
-
-ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0 40px;
     display: flex;
-    align-items: center;
-    height: 60px;
-    background-color: transparent;
+    align-items: center; /* Asegura que todo dentro de .ST-NAV esté centrado verticalmente */
+    justify-content: space-between;
 }
 
 .ST-LOGO {
     font-size: 28px;
     font-weight: bold;
     color: #fff;
-    margin-right: 40px;
+    margin-left: 40px;
+    margin-top: 0; /* Asegúrate de que no haya margen superior */
+    margin-bottom: 0; /* Asegúrate de que no haya margen inferior */
     letter-spacing: 2px;
     display: flex;
-    align-items: center;
+    align-items: center; /* Centra el contenido interno del logo si es necesario */
 }
 
-li {
+.ST-MENU {
+    list-style-type: none;
+    margin: 0 auto;
+    padding: 0;
+    display: flex;
+    align-items: center
+    justify-content: center;
+    height: 60px;
+    background-color: transparent;
+}
+
+.ST-MENU li {
     margin: 0 10px;
 }
 
-li a {
+.ST-MENU li a {
     display: block;
     color: #fff;
     text-align: center;
-    padding: 10px 18px;
+    padding: 20px 18px;
     text-decoration: none;
     border-radius: 4px;
     transition: background 0.2s;
-    font-size: 16px;
+    font-size: 20px;
 }
 
-li a:hover, .active {
+.ST-MENU li a:hover, .active {
     background-color: #ff9900;
     color: #fff;
 }
+
 /* ...existing code... */
 .ST-WELCOME {
     text-align: center;
